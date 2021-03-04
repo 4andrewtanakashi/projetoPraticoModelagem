@@ -1,0 +1,10 @@
+ion-title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+
+ion-searchbar {
+  --box-shadow: none;
+  border-bottom: solid 1px var(--ion-color-light);
+}

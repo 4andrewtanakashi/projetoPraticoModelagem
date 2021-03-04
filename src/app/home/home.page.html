@@ -1,8 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title> Blank </ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title> Climabr </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-searchbar placeholder="Buscar cidade..."></ion-searchbar>
+
+  <ion-list lines="none">
+    <app-city-details name="Lavras" state="MG"></app-city-details>
+    <app-city-details name="São Carlos" state="SP"></app-city-details>
+  </ion-list>
 </ion-content>
