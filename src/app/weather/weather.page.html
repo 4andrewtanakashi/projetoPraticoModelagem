@@ -1,7 +1,8 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-back-button defaultHref="home" text="Voltar">        
+      </ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +18,7 @@
         <img src="assets/tempestade.png" />
         <h3>TEMPESTADE</h3>
         <p>☂ 50% | ♨ 30%</p>
-        <ion-button color="warning"> Ver Detalhes </ion-button>
+        <ion-button color="warning" (click)="onSeeDetails()"> Ver Detalhes </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
