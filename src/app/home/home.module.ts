@@ -6,9 +6,10 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CityDetailsComponent } from './components/city-details/city-details.component';
+import { ErrorMessageComponent } from '../shared/components/error-message/error-message.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule],
-  declarations: [HomePage, CityDetailsComponent],
+  declarations: [HomePage, CityDetailsComponent, ErrorMessageComponent],
 })
 export class HomePageModule {}
