@@ -13,10 +13,9 @@ export class WeatherPage implements OnInit {
   ngOnInit() {}
 
   async onSeeDetails() {
-    (
-      await this.modalCtrl.create({
-        component: WeatherDetailsComponent,
-      })
-    ).present();
+    const modal = await this.modalCtrl.create({
+      component: WeatherDetailsComponent,
+    });
+    modal.present();
   }
 }
