@@ -30,6 +30,15 @@ export class FakeCityRepository extends CityRepository {
         longitude: 1,
       },
     },
+    {
+      id: 4,
+      name: 'Lavras do Sul',
+      state: 'RS',
+      coord: {
+        latitude: 1,
+        longitude: 1,
+      },
+    },
   ];
 
   async getAll(): Promise<City[]> {

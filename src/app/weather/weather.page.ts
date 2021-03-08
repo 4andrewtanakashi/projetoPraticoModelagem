@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { City } from 'src/domain/entities/city';
 import { Weather } from 'src/domain/entities/weather';
-import { WeatherService } from 'src/domain/services/weather.service';
+import { LoadWeatherService } from 'src/domain/services/load-weather.service';
 import { WeatherDetailsComponent } from './components/weather-details/weather-details.component';
 
 @Component({
@@ -21,7 +21,7 @@ export class WeatherPage {
   constructor(
     private readonly modalCtrl: ModalController,
     private readonly activatedRoute: ActivatedRoute,
-    private readonly weatherService: WeatherService
+    private readonly weatherService: LoadWeatherService
   ) {}
 
   ionViewDidEnter() {

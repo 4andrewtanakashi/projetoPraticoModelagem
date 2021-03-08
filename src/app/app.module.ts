@@ -9,15 +9,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FakeCityRepository } from 'src/data/fake/fake-city-repository';
 import { SearchCityService } from 'src/domain/services/search-city.service';
-import { WeatherService } from 'src/domain/services/weather.service';
+import { LoadWeatherService } from 'src/domain/services/load-weather.service';
 import { FakeWeatherRepository } from 'src/data/fake/fake-weather-repository';
 
 const createSearchCityService = () => {
   return new SearchCityService(new FakeCityRepository());
 };
 
-const createWeatherService = () => {
-  return new WeatherService(
+const createLoadWeatherService = () => {
+  return new LoadWeatherService(
     new FakeCityRepository(),
     new FakeWeatherRepository()
   );
@@ -33,7 +33,7 @@ const createWeatherService = () => {
       provide: SearchCityService,
       useFactory: createSearchCityService,
     },
-    { provide: WeatherService, useFactory: createWeatherService },
+    { provide: LoadWeatherService, useFactory: createLoadWeatherService },
   ],
   bootstrap: [AppComponent],
 })
