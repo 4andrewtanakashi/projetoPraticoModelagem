@@ -6,8 +6,12 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SearchCityByNameService } from 'src/domain/services/search-city-by-name.service';
 import { FakeCityRepository } from 'src/data/fake/fake-city-repository';
+import { SearchCityService } from 'src/domain/services/search-city.service';
+
+const createSearchCityService = () => {
+  return new SearchCityService(new FakeCityRepository());
+};
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,10 +20,8 @@ import { FakeCityRepository } from 'src/data/fake/fake-city-repository';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
-      provide: SearchCityByNameService,
-      useFactory: () => {
-        return new SearchCityByNameService(new FakeCityRepository());
-      },
+      provide: SearchCityService,
+      useFactory: createSearchCityService,
     },
   ],
   bootstrap: [AppComponent],

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { City } from 'src/domain/entities/city';
-import { SearchCityByNameService } from 'src/domain/services/search-city-by-name.service';
+import { SearchCityService } from 'src/domain/services/search-city.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ export class HomePage {
   hasError: boolean = false;
   errorMessage: string;
 
-  constructor(private readonly searchService: SearchCityByNameService) {}
+  constructor(private readonly searchService: SearchCityService) {}
 
   async onSearch(query: string) {
     try {

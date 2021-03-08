@@ -14,7 +14,10 @@
           #searchInput
           (ionChange)="onSearch(searchInput.value)"
         ></ion-searchbar>
-        <app-error-message message="{{errorMessage}}" *ngIf="hasError"></app-error-message>
+        <app-error-message
+          message="{{errorMessage}}"
+          *ngIf="hasError"
+        ></app-error-message>
         <ion-list lines="none" *ngIf="!hasError">
           <app-city-details
             *ngFor="let city of cities"

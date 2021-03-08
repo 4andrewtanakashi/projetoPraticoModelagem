@@ -2,7 +2,7 @@ import { City } from '../entities/city';
 import { CityNotFoundError } from '../errors/city-not-found.error';
 import { CityRepository } from './protocols/city-repository';
 
-export class SearchCityByNameService {
+export class SearchCityService {
   constructor(private readonly cityRepo: CityRepository) {}
 
   async search(query: string): Promise<City[]> {
@@ -17,7 +17,7 @@ export class SearchCityByNameService {
     );
 
     if (filteredCities.length == 0) {
-        throw new CityNotFoundError();
+      throw new CityNotFoundError();
     }
 
     return filteredCities;
