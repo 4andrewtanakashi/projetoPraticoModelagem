@@ -21,8 +21,10 @@
         <ion-list lines="none" *ngIf="!hasError">
           <app-city-details
             *ngFor="let city of cities"
+            id="{{city.id}}"
             name="{{city.name}}"
             state="{{city.state}}"
+            (selectCity)="onSelectCity($event)"
           ></app-city-details>
         </ion-list>
       </ion-col>

@@ -12,7 +12,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'weather',
+    path: 'weather/:id',
     loadChildren: () => import('./weather/weather.module').then( m => m.WeatherPageModule)
   },
 ];

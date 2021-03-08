@@ -35,4 +35,8 @@ export class FakeCityRepository extends CityRepository {
   async getAll(): Promise<City[]> {
     return this.fakeCities;
   }
+
+  async getById(id: number): Promise<City> {
+    return this.fakeCities.find((city) => city.id === id);
+  }
 }

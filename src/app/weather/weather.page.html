@@ -1,25 +1,32 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home" text="Voltar">        
-      </ion-back-button>
+      <ion-back-button defaultHref="home" text="Voltar"> </ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-grid *ngIf="!hasError && weather">
     <ion-row class="ion-align-items-center">
       <ion-col class="ion-text-center">
-        <p>Lavras | Quinta, 04/03</p>
+        <p>{{weather.city.name}} | {{today | customDate}}</p>
         <div class="temperature">
-          12<sup><small>ºC</small></sup>
+          {{weather.currentTemp}}<sup><small>ºC</small></sup>
         </div>
-        <img src="assets/tempestade.png" />
-        <h3>TEMPESTADE</h3>
-        <p>☂ 50% | ♨ 30%</p>
-        <ion-button color="success" (click)="onSeeDetails()"> Ver Detalhes </ion-button>
+        <img [src]="weather.details[0].conditionIconUrl" />
+        <h3>{{weather.details[0].condition}}</h3>
+        <p>
+          ☂ {{weather.details[0].pop}}% | ♨ {{weather.details[0].humidity}}%
+        </p>
+        <ion-button color="success" (click)="onSeeDetails()">
+          Ver Detalhes
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <app-error-message
+    message="{{errorMessage}}"
+    *ngIf="hasError"
+  ></app-error-message>
 </ion-content>
