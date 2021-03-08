@@ -10,7 +10,7 @@
   <ion-grid *ngIf="!hasError && weather">
     <ion-row class="ion-align-items-center">
       <ion-col class="ion-text-center">
-        <p>{{weather.city.name}} | {{today | customDate}}</p>
+        <p>{{weather.city.name}} | {{currentDate}}</p>
         <div class="temperature">
           {{weather.currentTemp}}<sup><small>ºC</small></sup>
         </div>

@@ -17,7 +17,7 @@
       </ion-col>
       <ion-col class="ion-text-center">
         <p>
-          <strong>{{ daysAfterToday(i) | customDate: false }}</strong
+          <strong>{{ daysAfterToday(i) | date:'dd/MM' }}</strong
           ><br /><small>{{ weather.condition }}</small>
         </p>
       </ion-col>

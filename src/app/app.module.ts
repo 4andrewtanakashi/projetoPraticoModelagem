@@ -11,7 +11,6 @@ import { FakeCityRepository } from 'src/data/fake/fake-city-repository';
 import { SearchCityService } from 'src/domain/services/search-city.service';
 import { WeatherService } from 'src/domain/services/weather.service';
 import { FakeWeatherRepository } from 'src/data/fake/fake-weather-repository';
-import { CustomDatePipe } from './shared/pipes/custom-date.pipe';
 
 const createSearchCityService = () => {
   return new SearchCityService(new FakeCityRepository());

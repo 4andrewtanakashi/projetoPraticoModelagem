@@ -29,6 +29,23 @@ export class WeatherPage {
     this.loadWeather(Number.parseInt(id));
   }
 
+  get currentDate() {
+    const today = new Date();
+    const weekDays = [
+      'Segunda',
+      'Terça',
+      'Quarta',
+      'Quinta',
+      'Sexta',
+      'Sábado',
+      'Domingo',
+    ];
+    const day = today.getDate().toString().padStart(2, '0');
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+
+    return `${weekDays[today.getDay()]}, ${day}/${month}`;
+  }
+
   async loadWeather(cityId: number) {
     try {
       this.hasError = false;
