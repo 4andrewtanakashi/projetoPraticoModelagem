@@ -12,26 +12,26 @@ export class LocalCityRepository extends CityRepository {
   }
 
   private toEntity(data: any): City {
-    if (data) {
-      return {
-        id: data.id,
-        name: data.nome,
-        state: data.estado.nome,
-        coord: {
-          latitude: data.latitude,
-          longitude: data.longitude,
-        },
-      };
-    } else {
+    if (!data) {
       return null;
     }
+
+    return {
+      id: data.id,
+      name: data.nome,
+      state: data.estado.nome,
+      coord: {
+        latitude: data.latitude,
+        longitude: data.longitude,
+      },
+    };
   }
 
   private toCollection(data: any[]): City[] {
-    if (data) {
-      return data.map((item: any) => this.toEntity(item));
-    } else {
+    if (!data) {
       return null;
     }
+
+    return data.map((item: any) => this.toEntity(item));
   }
 }

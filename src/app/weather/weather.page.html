@@ -12,10 +12,10 @@
       <ion-col class="ion-text-center">
         <p>{{weather.city.name}} | {{currentDate}}</p>
         <div class="temperature">
-          {{weather.currentTemp}}<sup><small>ºC</small></sup>
+          {{weather.currentTemp | number: '1.0-0'}}<sup><small>ºC</small></sup>
         </div>
         <img [src]="weather.details[0].conditionIconUrl" />
-        <h3>{{weather.details[0].condition}}</h3>
+        <h3>{{weather.details[0].condition | uppercase}}</h3>
         <p>
           ☂ {{weather.details[0].pop}}% | ♨ {{weather.details[0].humidity}}%
         </p>
