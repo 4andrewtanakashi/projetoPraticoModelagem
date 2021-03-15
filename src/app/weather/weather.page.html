@@ -27,6 +27,12 @@
   </ion-grid>
   <app-error-message
     message="{{errorMessage}}"
-    *ngIf="hasError"
+    *ngIf="hasError && !canRetry"
+  ></app-error-message>
+  <app-error-message
+    message="{{errorMessage}}"
+    buttonText="Tentar novamente"
+    *ngIf="hasError && canRetry"
+    (buttonClick)="loadWeather()"
   ></app-error-message>
 </ion-content>
