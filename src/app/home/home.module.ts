@@ -10,6 +10,6 @@ import { ErrorMessageComponent } from '../shared/components/error-message/error-
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule],
-  declarations: [HomePage, CityDetailsComponent, ErrorMessageComponent],
+  declarations: [HomePage, CityDetailsComponent],
 })
 export class HomePageModule {}

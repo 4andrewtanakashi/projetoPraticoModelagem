@@ -12,6 +12,6 @@ import { ErrorMessageComponent } from '../shared/components/error-message/error-
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, WeatherPageRoutingModule],
-  declarations: [WeatherPage, WeatherDetailsComponent, ErrorMessageComponent],
+  declarations: [WeatherPage, WeatherDetailsComponent],
 })
 export class WeatherPageModule {}

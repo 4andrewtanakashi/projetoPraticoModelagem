@@ -11,6 +11,7 @@ import { SearchCityService } from 'src/domain/services/search-city.service';
 import { LoadWeatherService } from 'src/domain/services/load-weather.service';
 import { LocalCityRepository } from 'src/data/local-city-repository';
 import { ApiWeatherRepository } from 'src/data/api-weather-repository';
+import { ErrorMessageComponent } from './shared/components/error-message/error-message.component';
 
 const createSearchCityService = () => {
   return new SearchCityService(new LocalCityRepository());
@@ -24,7 +25,7 @@ const createLoadWeatherService = (http: HttpClient) => {
 };
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ErrorMessageComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
