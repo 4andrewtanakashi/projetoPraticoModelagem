@@ -2,7 +2,7 @@
   <h5>
     <strong>{{ message }}</strong>
   </h5>
-  <ion-button *ngIf="buttonText" fill="solid" color="warning">{{
+  <ion-button *ngIf="buttonText" fill="solid" color="warning" (click)="onButtonClick()">{{
     buttonText
   }}</ion-button>
 </div>

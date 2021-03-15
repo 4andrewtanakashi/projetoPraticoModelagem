@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-error-message',
@@ -7,9 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ErrorMessageComponent implements OnInit {
   @Input() message: string;
-  @Input() buttonText: string;  
+  @Input() buttonText: string;
+  @Output() buttonClick: EventEmitter<void> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit() {}
+
+  onButtonClick() {
+    this.buttonClick.emit();
+  }
 }
