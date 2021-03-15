@@ -7,18 +7,18 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FakeCityRepository } from 'src/data/fake/fake-city-repository';
 import { SearchCityService } from 'src/domain/services/search-city.service';
 import { LoadWeatherService } from 'src/domain/services/load-weather.service';
 import { FakeWeatherRepository } from 'src/data/fake/fake-weather-repository';
+import { LocalCityRepository } from 'src/data/local-city-repository';
 
 const createSearchCityService = () => {
-  return new SearchCityService(new FakeCityRepository());
+  return new SearchCityService(new LocalCityRepository());
 };
 
 const createLoadWeatherService = () => {
   return new LoadWeatherService(
-    new FakeCityRepository(),
+    new LocalCityRepository(),
     new FakeWeatherRepository()
   );
 };
