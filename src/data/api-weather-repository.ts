@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
+
 import { Coordinate } from 'src/domain/entities/coordinate';
 import { Weather } from 'src/domain/entities/weather';
 import { WeatherRepository } from 'src/domain/services/protocols/weather-repository';
 import { environment } from 'src/environments/environment';
 
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { UnavailableServiceError } from 'src/domain/errors/unavailable-service.error';
 
 export class ApiWeatherRepository extends WeatherRepository {
   constructor(private readonly http: HttpClient) {
@@ -16,7 +19,10 @@ export class ApiWeatherRepository extends WeatherRepository {
       .get(
         `${environment.api_config.api_url}?lat=${coord.latitude}&lon=${coord.longitude}&exclude=minutely,hourly,alerts&lang=pt_br&units=metric&appid=${environment.api_config.api_key}`
       )
-      .pipe(map(this.toEntity))
+      .pipe(
+        map(this.toEntity),
+        catchError(error => throwError(new UnavailableServiceError()))
+      )
       .toPromise();
   }
 
