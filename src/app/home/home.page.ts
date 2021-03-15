@@ -28,7 +28,7 @@ export class HomePage {
     }
   }
 
-  onSelectCity(cityId: number) {
+  onSelectCity(cityId: string) {
     this.router.navigateByUrl(`/weather/${cityId}`);
   }
 }

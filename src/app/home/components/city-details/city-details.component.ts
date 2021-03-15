@@ -6,10 +6,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./city-details.component.scss'],
 })
 export class CityDetailsComponent implements OnInit {
-  @Input() id: number;
+  @Input() id: string;
   @Input() name: string;
   @Input() state: string;
-  @Output() selectCity: EventEmitter<number> = new EventEmitter();
+  @Output() selectCity: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
