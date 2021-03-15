@@ -1,7 +1,6 @@
-import { OPEN_WEATHER_API_KEY } from './openweather-api-key';
+import { OPEN_WEATHER_CONFIG } from './api-config';
 
 export const environment = {
   production: false,
-  api_url: 'https://api.openweathermap.org/data/2.5/onecall',
-  api_key: OPEN_WEATHER_API_KEY,
+  api_config: OPEN_WEATHER_CONFIG,
 };
