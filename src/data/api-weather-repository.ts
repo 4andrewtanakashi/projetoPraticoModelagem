@@ -33,7 +33,7 @@ export class ApiWeatherRepository extends WeatherRepository {
 
     for (let i = 0; i < numOfDailyWeathers; i++) {
       weather.details.push({
-        condition: data.daily[i].weather[0].main,
+        condition: data.daily[i].weather[0].description,
         conditionIconUrl: `http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`,
         pop: data.daily[i].pop * 100,
         humidity: data.daily[i].humidity,
