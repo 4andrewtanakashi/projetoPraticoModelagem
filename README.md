@@ -16,7 +16,7 @@ Crie um arquivo chamado `api-config.ts` no diretório `src/environment` do proje
 
 ```ts
 export const OPEN_WEATHER_CONFIG = {
-  api_key: '<you-api-key>',
+  api_key: '<your-api-key>',
   api_url: 'https://api.openweathermap.org/data/2.5/onecall',
   api_icon_url: 'http://openweathermap.org/img/wn',
 };
