@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
       <ion-button (click)="onClose()">
         <ion-icon name="close" slot="start"></ion-icon>
         Fechar
@@ -12,22 +12,22 @@
 <ion-content>
   <ion-grid>
     <ion-row *ngFor="let weather of weatherDetails; let i = index">
-      <ion-col class="ion-text-center">
+      <ion-col class="ion-text-center" size="2">
         <img [src]="weather.conditionIconUrl" />
       </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col class="ion-text-center" size="4">
         <p>
           <strong>{{ daysAfterToday(i) | date:'dd/MM' }}</strong
           ><br /><small>{{ weather.condition }}</small>
         </p>
       </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col class="ion-text-center" size="3">
         <p>
           ↓ {{ weather.minTemp | number:'1.0-0' }}<sup><small>ºC</small></sup
           ><br />↑ {{weather.maxTemp | number:'1.0-0'}}<sup><small>ºC</small></sup>
         </p>
       </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col class="ion-text-center" size="3">
         <p>☂ {{weather.pop}}%<br />♨ {{weather.humidity}}%</p>
       </ion-col>
     </ion-row>

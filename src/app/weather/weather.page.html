@@ -15,7 +15,7 @@
           {{weather.currentTemp | number: '1.0-0'}}<sup><small>ºC</small></sup>
         </div>
         <img [src]="weather.details[0].conditionIconUrl" />
-        <h3>{{weather.details[0].condition | uppercase}}</h3>
+        <h4>{{weather.details[0].condition | uppercase}}</h4>
         <p>
           ☂ {{weather.details[0].pop}}% | ♨ {{weather.details[0].humidity}}%
         </p>
