@@ -8,10 +8,16 @@ import { WeatherPageRoutingModule } from './weather-routing.module';
 
 import { WeatherPage } from './weather.page';
 import { WeatherDetailsComponent } from './components/weather-details/weather-details.component';
-import { ErrorMessageComponent } from '../shared/components/error-message/error-message.component';
+import { SharedModule } from '../shared/modules/shared/shared.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, WeatherPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    WeatherPageRoutingModule,
+    SharedModule,
+  ],
   declarations: [WeatherPage, WeatherDetailsComponent],
 })
 export class WeatherPageModule {}

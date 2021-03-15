@@ -6,10 +6,16 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CityDetailsComponent } from './components/city-details/city-details.component';
-import { ErrorMessageComponent } from '../shared/components/error-message/error-message.component';
+import { SharedModule } from '../shared/modules/shared/shared.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    HomePageRoutingModule,
+    SharedModule,
+  ],
   declarations: [HomePage, CityDetailsComponent],
 })
 export class HomePageModule {}
