@@ -17,18 +17,22 @@
       </ion-col>
       <ion-col class="ion-text-center" size="4">
         <p>
-          <strong>{{ daysAfterToday(i) | date:'dd/MM' }}</strong
+          <strong>{{ daysAfterToday(i) | date: "dd/MM" }}</strong
           ><br /><small>{{ weather.condition }}</small>
         </p>
       </ion-col>
       <ion-col class="ion-text-center" size="3">
         <p>
-          ↓ {{ weather.minTemp | number:'1.0-0' }}<sup><small>ºC</small></sup
-          ><br />↑ {{weather.maxTemp | number:'1.0-0'}}<sup><small>ºC</small></sup>
+          ↓ {{ weather.minTemp | number: "1.0-0" }}<sup><small>ºC</small></sup
+          ><br />↑ {{ weather.maxTemp | number: "1.0-0"
+          }}<sup><small>ºC</small></sup>
         </p>
       </ion-col>
       <ion-col class="ion-text-center" size="3">
-        <p>☂ {{weather.pop}}%<br />♨ {{weather.humidity}}%</p>
+        <p>
+          ☂ {{ weather.pop | number: "1.0-0" }}%<br />♨
+          {{ weather.humidity | number: "1.0-0" }}%
+        </p>
       </ion-col>
     </ion-row>
   </ion-grid>

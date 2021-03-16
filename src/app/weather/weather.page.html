@@ -17,7 +17,7 @@
         <img [src]="weather.details[0].conditionIconUrl" />
         <h4>{{weather.details[0].condition | uppercase}}</h4>
         <p>
-          ☂ {{weather.details[0].pop}}% | ♨ {{weather.details[0].humidity}}%
+          ☂ {{weather.details[0].pop | number: '1.0-0'}}% | ♨ {{weather.details[0].humidity | number: '1.0-0'}}%
         </p>
         <ion-button color="success" (click)="onSeeDetails()">
           Ver Detalhes
