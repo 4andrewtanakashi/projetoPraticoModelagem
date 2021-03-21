@@ -38,13 +38,13 @@ export class WeatherPage {
   get currentDate() {
     const today = new Date();
     const weekDays = [
+      'Domingo',
       'Segunda',
       'Terça',
       'Quarta',
       'Quinta',
       'Sexta',
       'Sábado',
-      'Domingo',
     ];
     const day = today.getDate().toString().padStart(2, '0');
     const month = (today.getMonth() + 1).toString().padStart(2, '0');
