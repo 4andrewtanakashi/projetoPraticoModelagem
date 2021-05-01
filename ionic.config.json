@@ -1,5 +1,7 @@
 {
   "name": "climabr",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
