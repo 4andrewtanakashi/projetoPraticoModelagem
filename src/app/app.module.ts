@@ -14,6 +14,7 @@ import { ApiWeatherRepository } from 'src/data/api-weather-repository';
 
 import { Drivers, Storage } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 
 const createSearchCityService = () => {
   return new SearchCityService(new LocalCityRepository());
@@ -34,11 +35,11 @@ const createLoadWeatherService = (http: HttpClient) => {
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule
-    // ,
-    // IonicStorageModule.forRoot({
-    //   name: '__mydb',
-    //   driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
-    // })
+    ,
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+      driverOrder: [CordovaSQLiteDriver._driver, Drivers.IndexedDB, Drivers.LocalStorage]
+    })
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

@@ -9,7 +9,4 @@ export class AppComponent {
   constructor() {
   }
 
-  // async ngOnInit() {
-  //   await this.storage.create();
-  // }
 }

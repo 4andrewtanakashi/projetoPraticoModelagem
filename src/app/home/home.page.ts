@@ -14,30 +14,41 @@ export class HomePage {
   hasError: boolean = false;
   errorMessage: string;
   citiesHist: City[];
+  hasHistory: boolean = false;
 
   constructor(
     private readonly searchService: SearchCityService,
     private readonly router: Router,
-    //private readonly historyService: HistoryCityService,
-  ) {}
+    private readonly historyService: HistoryCityService,
+  ) {
+    this.setHasHistory();
+    if (this.setHasHistory) {
+      this.onLisCitiesHist();
+    }
+  }
 
-//   async onLisCitiesHist () {
-//       this.citiesHist = await this.historyService.loadByCityies();
-//   }
+  async setHasHistory () {
+    this.hasHistory = await this.historyService.isEmpty();
+  }
+
+  async onLisCitiesHist () {
+      this.citiesHist = await this.historyService.loadByCityies();
+  }
 
   async onSearch(query: string) {
     try {
       this.hasError = false;
       this.cities = await this.searchService.search(query);
+      this.hasHistory = false;
     } catch (error) {
       this.hasError = true;
       this.errorMessage = error.message;
     }
   }
 
-  onSelectCity(cityId: string) {
-    // if (city != null)
-    //   this.historyService.saveByCity(cityId, city);
+  onSelectCity(cityId: string, city: City) {
+    console.log("cityId: ", city.name, "city: ", city);
+    this.historyService.saveByCity(city.name, city);
     this.router.navigateByUrl(`/weather/${cityId}`);
   }
 }

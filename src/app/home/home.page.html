@@ -18,22 +18,23 @@
           message="{{errorMessage}}"
           *ngIf="hasError"
         ></app-error-message>
-        <!-- <ion-list lines="none" *ngIf="!historyService.isEmpty()">
+        <ion-list lines="none" *ngIf="hasHistory">
           <p style="color: #9599a0">Últimas Consultas</p>
           <app-city-details
             *ngFor="let city of citiesHist"
             id="{{city.id}}"
             name="{{city.name}}"
             state="{{city.state}}"
-            (selectCity)="onSelectCity($event, null)"
-        ></app-city-details> -->
+            (selectCity)="onSelectCity($event, city)"
+          ></app-city-details>
+        </ion-list>
         <ion-list lines="none" *ngIf="!hasError">
           <app-city-details
             *ngFor="let city of cities"
             id="{{city.id}}"
             name="{{city.name}}"
             state="{{city.state}}"
-            (selectCity)="onSelectCity($event)"
+            (selectCity)="onSelectCity($event, city)"
           ></app-city-details>
         </ion-list>
       </ion-col>
