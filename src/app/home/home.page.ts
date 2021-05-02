@@ -29,8 +29,11 @@ export class HomePage {
         await this.historyService.loadByCityies()
           .then( cities => { 
             this.cities = cities;
-            console.log("this.cities: ", this.cities);
-            this.hasHistory = true;
+            console.log("this.cities Internal: ", this.cities);
+            if (this.cities.length != 0) {
+              console.log("this.hasHistory", this.hasHistory);
+              this.hasHistory = true
+            };
           } );
       } );
   }
