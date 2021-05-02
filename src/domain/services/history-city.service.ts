@@ -11,14 +11,17 @@ export class HistoryCityService {
     async initHist() {
         const storage = await this.storage?.create()
         this._storage = storage;
-        console.log("this._storage I: ", this._storage);
     }
 
     async saveByCity (cityKey: string, city: City) {
         this._storage?.set(cityKey, city);
     }
 
-    async loadByCityies () : Promise<City[]> {
+    async lengthLocalStorage () {
+        return await this._storage?.length();
+    }
+
+    async loadByCityies () : Promise<any> {
         let citiesAux = [];
         this._storage?.forEach( (key, value, index) => {
             citiesAux.push(key);

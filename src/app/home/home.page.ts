@@ -27,13 +27,14 @@ export class HomePage {
     this.historyService.initHist()
       .then( async _ => {
         await this.historyService.loadByCityies()
-          .then( cities => { 
-            this.cities = cities;
-            console.log("this.cities Internal: ", this.cities);
-            if (this.cities.length != 0) {
-              console.log("this.hasHistory", this.hasHistory);
-              this.hasHistory = true
-            };
+          .then( async cities => {
+              this.citiesHist = cities;
+              let lenLocalStorage = 0;
+              await this.historyService.lengthLocalStorage()
+                .then( len => lenLocalStorage = len );
+              if (lenLocalStorage > 0) {
+                this.hasHistory = true
+              }
           } );
       } );
   }
