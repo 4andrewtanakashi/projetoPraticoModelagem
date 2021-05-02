@@ -38,7 +38,7 @@ const createLoadWeatherService = (http: HttpClient) => {
     ,
     IonicStorageModule.forRoot({
       name: '__mydb',
-      driverOrder: [CordovaSQLiteDriver._driver, Drivers.IndexedDB, Drivers.LocalStorage]
+      driverOrder: [Drivers.LocalStorage]
     })
   ],
   providers: [

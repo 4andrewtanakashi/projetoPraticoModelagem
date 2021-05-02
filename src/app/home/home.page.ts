@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { City } from 'src/domain/entities/city';
 import { SearchCityService } from 'src/domain/services/search-city.service';
 import { HistoryCityService } from 'src/domain/services/history-city.service';
+import { cities } from 'src/data/data-source/br-cities';
 
 @Component({
   selector: 'app-home',
@@ -20,19 +21,18 @@ export class HomePage {
     private readonly searchService: SearchCityService,
     private readonly router: Router,
     private readonly historyService: HistoryCityService,
-  ) {
-    this.setHasHistory();
-    if (this.setHasHistory) {
-      this.onLisCitiesHist();
-    }
-  }
+  ) { }
 
-  async setHasHistory () {
-    this.hasHistory = await this.historyService.isEmpty();
-  }
-
-  async onLisCitiesHist () {
-      this.citiesHist = await this.historyService.loadByCityies();
+  async ngOnInit() {
+    this.historyService.initHist()
+      .then( async _ => {
+        await this.historyService.loadByCityies()
+          .then( cities => { 
+            this.cities = cities;
+            console.log("this.cities: ", this.cities);
+            this.hasHistory = true;
+          } );
+      } );
   }
 
   async onSearch(query: string) {
@@ -47,7 +47,6 @@ export class HomePage {
   }
 
   onSelectCity(cityId: string, city: City) {
-    console.log("cityId: ", city.name, "city: ", city);
     this.historyService.saveByCity(city.name, city);
     this.router.navigateByUrl(`/weather/${cityId}`);
   }
