@@ -2,6 +2,19 @@
 
 Uma aplicação simples para consulta à previsão do tempo de cidades brasileiras.
 
+Deploy: [CLIMABR](https://proj-climabr-modelagem.firebaseapp.com/home)
+
+### Apresentação
+
+Localização do vídeo de apresentação do app:
+
+```
+ClimaBR/
+├── projetoPraticoModelagem
+│   └── apresentacao/
+│        └── apresentacao_trabalho_gcc132.mp4
+```
+
 # Como usar?
 
 Clone este repositório.
@@ -27,3 +40,15 @@ Para abrir a aplicação, execute o comando:
 `ionic serve`
 
 Enjoy!
+
+## Projeto realizado para a disciplina GCC132 - Modelagem e Implementação de Software
+
+Disciplina ministrada pelo professor Paulo Afonso Parreira Júnior (pauloafpjunior)
+
+### Integrantes do grupo:
+
+```
+  Andrew Takeshi Tanaka de Vita (4andrewtanakashi)
+  Gabriel Henrique Silva Amorim (ghamorim)
+  Luiz Carlos Coelho Conde (luizcoelhoc1)
+```
